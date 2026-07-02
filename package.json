@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Al-Quran Web with GhostDB",
   "scripts": {
-    "install-all": "cd GhostDB && npm install && cd ../quran-web && npm install",
+    "install-all": "cd GhostDB && npm install && cd ../quran-web && npm install --include=dev",
     "build": "cd quran-web && npm run build",
     "start": "node GhostDB/server.js"
   }

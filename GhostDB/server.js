@@ -170,7 +170,7 @@ if (!isApiOnly) {
 }
 
 // --- Start Server ---
-const PORT = config.port || 9969;
+const PORT = process.env.PORT || process.env.SERVER_PORT || config.port || 9969;
 app.listen(PORT, () => {
     console.log(`\n🚀 GhostDB Server nyala di port ${PORT}`);
     console.log(`🔒 Mode: ${isApiOnly ? 'API Only' : 'Web UI + API'}`);
