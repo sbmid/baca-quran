@@ -5,3 +5,4 @@ dist
 quran-web/node_modules
 GhostDB/node_modules
 quran-web/dist
+deploy.js 

@@ -152,7 +152,17 @@ app.delete('/api/:collection', requireAuth, (req, res) => {
 
 // --- UI Serving ---
 if (!isApiOnly) {
-    app.use(express.static('public'));
+    const distPath = path.join(__dirname, '../quran-web/dist');
+    if (fs.existsSync(distPath)) {
+        app.use(express.static(distPath));
+        // Fallback for React Router
+        app.get('*', (req, res) => {
+            if (req.path.startsWith('/api')) return res.status(404).json({ error: 'Not found' });
+            res.sendFile(path.join(distPath, 'index.html'));
+        });
+    } else {
+        app.use(express.static('public')); // Fallback to GhostDB UI
+    }
 } else {
     app.use((req, res) => {
         res.status(404).json({ error: 'UI is disabled. API Only mode active.' });

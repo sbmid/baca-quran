@@ -4,11 +4,7 @@
   "description": "Al-Quran Web with GhostDB",
   "scripts": {
     "install-all": "cd GhostDB && npm install && cd ../quran-web && npm install",
-    "start": "node start-all.js",
-    "dev": "node start-all.js",
-    "build": "cd quran-web && npm run build"
-  },
-  "dependencies": {
-    "sharp": "^0.35.3"
+    "build": "cd quran-web && npm run build",
+    "start": "node GhostDB/server.js"
   }
 }
