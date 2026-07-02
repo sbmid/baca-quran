@@ -1,0 +1,6 @@
+@echo off
+echo Starting GhostDB...
+start cmd /k "cd GhostDB && npm start"
+echo Starting Vite Frontend...
+start cmd /k "cd quran-web && npm run dev"
+echo Selesai. Web akan jalan di http://localhost:5173

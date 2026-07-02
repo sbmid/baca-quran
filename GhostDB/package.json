@@ -1,0 +1,22 @@
+{
+  "name": "ghost-db",
+  "version": "1.0.0",
+  "description": "Database ghaib. Tanpa skema, tanpa migrasi, tau-tau jalan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node server.js --api-only",
+    "ui": "node server.js"
+  },
+  "keywords": [
+    "db",
+    "json",
+    "schemaless",
+    "lazy"
+  ],
+  "author": "Azrial Galih Prasetyo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --bg-primary: #f8f9fa;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #f1f3f5;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --border-color: #e5e7eb;
+        --accent: #24b47e;
+    }
+    
+    .dark {
+        --bg-primary: #1c1c1c;
+        --bg-secondary: #232323;
+        --bg-tertiary: #2e2e2e;
+        --text-primary: #ededed;
+        --text-secondary: #a0a0a0;
+        --border-color: #3e3e3e;
+        --accent: #24b47e;
+    }
+}
+
+@layer utilities {
+    .bg-bg-primary { background-color: var(--bg-primary); }
+    .bg-bg-secondary { background-color: var(--bg-secondary); }
+    .bg-bg-tertiary { background-color: var(--bg-tertiary); }
+    .text-text-primary { color: var(--text-primary); }
+    .text-text-secondary { color: var(--text-secondary); }
+    .border-border-color { border-color: var(--border-color); }
+    .divide-border-color > :not([hidden]) ~ :not([hidden]) { border-color: var(--border-color); }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Toast Animations */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.toast-enter {
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.toast-exit {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Base resets */
+input, textarea, button {
+    font-family: 'Outfit', sans-serif;
+}

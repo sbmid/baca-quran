@@ -1,0 +1,7 @@
+node_modules
+.env
+dist
+.DS_Store
+quran-web/node_modules
+GhostDB/node_modules
+quran-web/dist

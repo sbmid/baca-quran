@@ -1,0 +1,11 @@
+{
+  "name": "al-quran-web",
+  "version": "1.0.0",
+  "description": "Al-Quran Web with GhostDB",
+  "scripts": {
+    "install-all": "cd GhostDB && npm install && cd ../quran-web && npm install",
+    "start": "node start-all.js",
+    "dev": "node start-all.js",
+    "build": "cd quran-web && npm run build"
+  }
+}
